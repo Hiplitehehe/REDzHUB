@@ -1,17 +1,14 @@
-// worker.js
-
 async function handleRequest(req) {
   const url = new URL(req.url);
 
   // Serve the home page when the user accesses "/"
   if (url.pathname === "/") {
-    // Your home page logic here (you can fetch or use static content)
+    // Your home page HTML content
     const homePage = `
       <html>
         <head>
           <title>Welcome to devilsadvocate's Site</title>
           <style>
-            /* Style for Home Page */
             body {
               font-family: 'Roboto', sans-serif;
               margin: 0;
@@ -63,7 +60,11 @@ async function handleRequest(req) {
             <h1>Welcome to devilsadvocate's Site!</h1>
             <p>Explore our features, resources, and content.</p>
             <button class="button" onclick="window.location.href='/explore'">Explore</button>
+            <br><br>
+            <button class="button" onclick="getKey()">Get Key</button> <!-- New Get Key Button -->
+            <p id="keyDisplay"></p> <!-- This paragraph will display the key -->
           </div>
+          <script src="/Getkey.js"></script> <!-- Link to the Getkey.js file -->
         </body>
       </html>
     `;
@@ -72,11 +73,30 @@ async function handleRequest(req) {
 
   // Serve the explore page when the user accesses "/explore"
   if (url.pathname === "/explore") {
-    // Fetch the raw Explore.html from GitHub repository
     const explorePage = await fetch('https://raw.githubusercontent.com/Hiplitehehe/Bhhhhh/91d828c55482273382db607e2ba53523c8e488d1/Explore.html');
     return new Response(await explorePage.text(), {
       headers: { 'Content-Type': 'text/html' }
     });
+  }
+
+  // Serve the Getkey.js file
+  if (url.pathname === "/Getkey.js") {
+    const getKeyScript = `
+      function getKey() {
+        const key = 'kdnxisdj';  // Static key you want to display
+
+        // Create or find the key display element and set its content
+        let keyDisplay = document.getElementById('keyDisplay');
+        if (!keyDisplay) {
+          keyDisplay = document.createElement('p');
+          keyDisplay.id = 'keyDisplay';
+          document.body.appendChild(keyDisplay);
+        }
+
+        keyDisplay.textContent = \`Your key is: \${key}\`;
+      }
+    `;
+    return new Response(getKeyScript, { headers: { 'Content-Type': 'application/javascript' } });
   }
 
   // Return a 404 response if the path is not recognized
