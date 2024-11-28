@@ -3,10 +3,61 @@
 async function handleRequest(req) {
   const url = new URL(req.url);
 
-  // Check if it's the root page "/"
+  // Serve the home page when the user accesses the root "/"
   if (url.pathname === "/") {
-    // Your existing code for the home page
-    // ...
+    const homePage = `
+      <html>
+        <head>
+          <title>Welcome to devilsadvocate's Site</title>
+          <style>
+            body {
+              font-family: 'Roboto', sans-serif;
+              margin: 0;
+              padding: 0;
+              height: 100%;
+              background-color: #222222;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+            }
+            h1 {
+              font-size: 3rem;
+              color: #FF6347;
+              font-weight: bold;
+            }
+            .container {
+              padding: 40px;
+              background-color: rgba(0, 0, 0, 0.7);
+              border-radius: 10px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+            .button {
+              padding: 15px 30px;
+              background-color: #FF6347;
+              color: white;
+              font-size: 1.2rem;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+            }
+            .button:hover {
+              background-color: #B22222;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>Welcome to devilsadvocate's Site</h1>
+            <p>We're glad you're here! Explore all the cool features!</p>
+            <button class="button" onclick="window.location.href='/explore'">Go to Explore</button>
+          </div>
+        </body>
+      </html>
+    `;
+    return new Response(homePage, { headers: { 'Content-Type': 'text/html' } });
   }
 
   // Serve the explore page when the user accesses "/explore"
@@ -76,15 +127,14 @@ async function handleRequest(req) {
         </body>
       </html>
     `;
-
     return new Response(explorePage, { headers: { 'Content-Type': 'text/html' } });
   }
 
   // Return a 404 response if the path is not recognized
-  return new Response('Not Found', { status: 404 })
+  return new Response('Not Found', { status: 404 });
 }
 
 // The worker entry point
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+  event.respondWith(handleRequest(event.request));
 });
