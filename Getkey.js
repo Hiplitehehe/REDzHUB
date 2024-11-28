@@ -1,6 +1,14 @@
 // getkey.js
-
 function getKey() {
-  // Example functionality: display an alert with a key
-  alert('Your key is: 12345-ABCDE');
+  const key = 'kdnxisdj';  // Static key you want to display
+
+  // Create or find the key display element and set its content
+  let keyDisplay = document.getElementById('keyDisplay');
+  if (!keyDisplay) {
+    keyDisplay = document.createElement('p');
+    keyDisplay.id = 'keyDisplay';
+    document.body.appendChild(keyDisplay); // Optionally, append the key display to the body or any specific container
+  }
+  
+  keyDisplay.textContent = `Your key is: ${key}`;
 }
