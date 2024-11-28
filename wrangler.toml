@@ -1,0 +1,7 @@
+name = "bypass-tool"
+main = "index.js"
+compatibility_date = "2024-11-28"
+
+# Add a route to bind this worker to a specific domain or subdomain
+route = "https://bypass.example.com/*"
+account_id = "your-cloudflare-account-id"
