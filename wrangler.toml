@@ -4,4 +4,4 @@ compatibility_date = "2024-11-28"
 
 # Add a route to bind this worker to a specific domain or subdomain
 route = "https://bypass.example.com/*"
-account_id = "your-cloudflare-account-id"
+account_id = "4806f2425c6560e67d083f843b83dd5d"
