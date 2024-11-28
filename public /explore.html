@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore devilsadvocate's Site</title>
+  <title>Welcome to devilsadvocate's Site</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -20,7 +20,7 @@
       font-size: 3rem;
       font-weight: bold;
       text-transform: uppercase;
-      color: #B22222;  /* Dark red */
+      color: #B22222;
       letter-spacing: 2px;
       text-align: center;
     }
@@ -30,20 +30,15 @@
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       text-align: center;
-      animation: fadeIn 1s ease-out;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
     p {
       font-size: 1.2rem;
-      color: #FF6347;  /* Light red/pinkish tone */
+      color: #FF6347;
       margin: 20px 0;
     }
     .button {
       padding: 15px 30px;
-      background-color: #FF6347;  /* Red background */
+      background-color: #FF6347;
       color: white;
       font-size: 1.2rem;
       border: none;
@@ -52,15 +47,19 @@
       transition: background-color 0.3s ease;
     }
     .button:hover {
-      background-color: #B22222;  /* Darker red on hover */
+      background-color: #B22222;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Explore devilsadvocate's Site!</h1>
-    <p>Now that you're here, check out all the cool features and content we have for you!</p>
-    <button class="button" onclick="window.location.href='/'">Go Back to Home</button>
+    <h1>Welcome to devilsadvocate's Site!</h1>
+    <p>Explore our features, resources, and content.</p>
+    <button class="button" onclick="window.location.href='/explore'">Explore</button>
+    <br><br>
+    <button class="button" onclick="getKey()">Get Key</button> <!-- New Get Key Button -->
+    <p id="keyDisplay"></p> <!-- This paragraph will display the key -->
   </div>
+  <script src="https://raw.githubusercontent.com/Hiplitehehe/REDzHUB/main/Getkey.js"></script> <!-- Linking the JS from GitHub -->
 </body>
-</html> 
+</html>
