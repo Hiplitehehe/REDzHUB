@@ -11,7 +11,4 @@ zone_id = ""  # You can leave zone_id empty if not using a custom domain
 
 [build]
 command = ""  # The build command (if you're using dependencies)
-
-[[kv_namespaces]]
-binding = "MY_KV_NAMESPACE"  # (Optional) If you're using KV storage
-id = "your_kv_namespace_id"  # (Optional) Replace with your KV namespace ID
+  # (Optional) Replace with your KV namespace ID
