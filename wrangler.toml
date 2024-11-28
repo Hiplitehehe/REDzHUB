@@ -1,6 +1,8 @@
 name = "wispy-lake-c00f"  # The name of your worker project
 type = "javascript"  # The type of your worker (javascript, rust, etc.)
 
+compatibility_date = "2024-11-28" 
+
 # You can use workers.dev without specifying a custom route or subdomain
 [env.production]
 workers_dev = true  # Use workers_dev to access the worker without a custom route
