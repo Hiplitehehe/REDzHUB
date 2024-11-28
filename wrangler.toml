@@ -1,4 +1,4 @@
-name = "my-worker"  # The name of your worker project
+name = "wispy-lake-c00f"  # The name of your worker project
 type = "javascript"  # The type of your worker (javascript, rust, etc.)
 
 # You can use workers.dev without specifying a custom route or subdomain
