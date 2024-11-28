@@ -3,7 +3,6 @@ async function handleRequest(req) {
 
   // Serve the home page when the user accesses "/"
   if (url.pathname === "/") {
-    // Your home page HTML content
     const homePage = `
       <html>
         <head>
@@ -83,7 +82,7 @@ async function handleRequest(req) {
   if (url.pathname === "/Getkey.js") {
     const getKeyScript = `
       function getKey() {
-        const key = 'KH-Adfwb7901+Habksjaiq';  // Static key you want to display
+        const key = 'kdnxisdj';  // Static key you want to display
 
         // Create or find the key display element and set its content
         let keyDisplay = document.getElementById('keyDisplay');
@@ -93,7 +92,12 @@ async function handleRequest(req) {
           document.body.appendChild(keyDisplay);
         }
 
-        keyDisplay.textContent = \` key is: \${key}\`;
+        keyDisplay.textContent = \`Your key is: \${key}\`;
+
+        // Style the key to make it bigger
+        keyDisplay.style.fontSize = '3rem';  // Increase font size for bigger key
+        keyDisplay.style.fontWeight = 'bold';  // Optionally, make it bold for emphasis
+        keyDisplay.style.color = '#FF6347';  // Color to match the theme
       }
     `;
     return new Response(getKeyScript, { headers: { 'Content-Type': 'application/javascript' } });
