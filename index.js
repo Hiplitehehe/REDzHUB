@@ -15,23 +15,36 @@ async function handleRequest(req) {
               margin: 0;
               padding: 0;
               height: 100%;
-              background-color: #222222;
-              color: white;
+              background: linear-gradient(135deg, #8B0000, #FF6347);
               display: flex;
               justify-content: center;
               align-items: center;
-              text-align: center;
+              color: white;
             }
             h1 {
               font-size: 3rem;
-              color: #FF6347;
               font-weight: bold;
+              text-transform: uppercase;
+              color: #B22222;
+              letter-spacing: 2px;
+              text-align: center;
             }
             .container {
-              padding: 40px;
               background-color: rgba(0, 0, 0, 0.7);
-              border-radius: 10px;
+              padding: 40px 60px;
+              border-radius: 15px;
               box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+              text-align: center;
+              animation: fadeIn 1s ease-out;
+            }
+            @keyframes fadeIn {
+              0% { opacity: 0; transform: translateY(20px); }
+              100% { opacity: 1; transform: translateY(0); }
+            }
+            p {
+              font-size: 1.2rem;
+              color: #FF6347;
+              margin: 20px 0;
             }
             .button {
               padding: 15px 30px;
