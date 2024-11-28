@@ -20,6 +20,7 @@ async function handleRequest(req) {
               justify-content: center;
               align-items: center;
               color: white;
+              overflow: hidden;
             }
             h1 {
               font-size: 3rem;
@@ -59,9 +60,35 @@ async function handleRequest(req) {
             .button:hover {
               background-color: #B22222;
             }
+
+            /* Water animation */
+            .water {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+              background-size: cover;
+              animation: wave 6s ease-in-out infinite;
+              z-index: -1;
+            }
+
+            @keyframes wave {
+              0% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-15px);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
           </style>
         </head>
         <body>
+          <div class="water"></div>
           <div class="container">
             <h1>Welcome to devilsadvocate's Site</h1>
             <p>We're glad you're here! Explore all the cool features!</p>
@@ -90,6 +117,7 @@ async function handleRequest(req) {
               justify-content: center;
               align-items: center;
               color: white;
+              overflow: hidden;
             }
             h1 {
               font-size: 3rem;
@@ -129,9 +157,35 @@ async function handleRequest(req) {
             .button:hover {
               background-color: #B22222;
             }
+
+            /* Water animation */
+            .water {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+              background-size: cover;
+              animation: wave 6s ease-in-out infinite;
+              z-index: -1;
+            }
+
+            @keyframes wave {
+              0% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-15px);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
           </style>
         </head>
         <body>
+          <div class="water"></div>
           <div class="container">
             <h1>Explore devilsadvocate's Site!</h1>
             <p>Now that you're here, check out all the cool features and content we have for you!</p>
