@@ -82,7 +82,7 @@ async function handleRequest(req) {
   if (url.pathname === "/Getkey.js") {
     const getKeyScript = `
       function getKey() {
-        const key = 'kdnxisdj';  // Static key you want to display
+        const key = 'KH-Adfwb7901+Habksjaiq';  // Static key you want to display
 
         // Create or find the key display element and set its content
         let keyDisplay = document.getElementById('keyDisplay');
@@ -92,7 +92,7 @@ async function handleRequest(req) {
           document.body.appendChild(keyDisplay);
         }
 
-        keyDisplay.textContent = \`Your key is: \${key}\`;
+        keyDisplay.textContent = \` key is: \${key}\`;
 
         // Style the key to make it bigger
         keyDisplay.style.fontSize = '3rem';  // Increase font size for bigger key
